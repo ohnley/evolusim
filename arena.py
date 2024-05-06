@@ -4,6 +4,7 @@ import block
 from cell import Cell
 import pandas as pd
 
+
 class Arena:
 
     def __init__(self, height=10, width=10, cells=None):

@@ -4,9 +4,7 @@ import pygame
 from block import Food
 from cell import Cell
 from neuralbrainvisualizer import NeuralBrainVisualizer
-from string import ascii_lowercase as alc
 import random
-
 
 
 # Define colors
