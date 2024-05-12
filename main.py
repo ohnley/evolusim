@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
     auto_progress = False
     update_event = pygame.USEREVENT + 1
-    pygame.time.set_timer(update_event, 20)  # Update every 20 milliseconds
+    pygame.time.set_timer(update_event, 60)  # Update every 20 milliseconds
 
     visualizers = []
 

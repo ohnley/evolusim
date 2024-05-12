@@ -5,6 +5,7 @@ import numpy as np
 from brain import NeuralBrain
 from block import Block
 
+#todo: move to utils
 FOV = {
     'UDLR': [(0, -1), (0, 1), (-1, 0), (1, 0)],
     '3x3': [(1, 1), (1,0), (1,-1), (0, 1), (0,-1), (-1, 1), (-1, 0), (-1, -1)],
@@ -70,6 +71,7 @@ class Cell(Block):
         action = self.process_activations(outputs)
         return action
 
+    #todo: subclass
     def process_env(self, env):
         parsed_inputs = []
         for adj, cell in env.items():
@@ -84,6 +86,7 @@ class Cell(Block):
         # print(self.value, self.x, self.y, parsed_inputs)
         return parsed_inputs
 
+    #todo: simplify
     def process_activations(self, activations):
 
         neuron = np.argmax(activations)

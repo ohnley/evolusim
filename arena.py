@@ -69,9 +69,9 @@ class Arena:
     def append_to_dataframe(self, actions_taken, epoch, df=None):
         # Define a mapping from tuples to directions
         direction_mapping = {
-            (0, 1): 'down',
+            (0, 1):  'down',
             (0, -1): 'up',
-            (1, 0): 'right',
+            (1, 0):  'right',
             (-1, 0): 'left'
         }
 
@@ -99,6 +99,7 @@ class Arena:
 
         new_cells = set()
 
+        # todo: move to utls
         def generate_unique_random_points(height, width, n):
             if n > height * width:
                 raise ValueError(f"Cannot generate {n} unique points in a {height}x{width} grid.")
@@ -110,6 +111,7 @@ class Arena:
         new_pos = generate_unique_random_points(self.height, self.width, (len(self.cells)*multiplier) + 10)
         i = 0
 
+        #todo: simplify this
         for cell in list(copy.deepcopy(self.cells)):
             self.remove_cell(cell)
             for _ in range(multiplier):
@@ -123,6 +125,7 @@ class Arena:
         for cell in new_cells:
             self.add_cell(cell)
 
+        # todo: add to settings
         for j in range(1, 5):
             food = block.Food(random.randint(1, 10))
             self.set_loc(new_pos[-j][0], new_pos[-j][1], food)
@@ -162,6 +165,7 @@ class Arena:
             action_list.append(action)
         return action_list
 
+    #todo: put in cell class
     def execute_action_list(self, action_list):
         actions_taken = {
             'move': {

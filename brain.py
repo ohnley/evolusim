@@ -53,6 +53,9 @@ class NeuralBrain:
     def tanh(self, x):
         return np.tanh(x)
 
+    def sin(self, x):
+        return np.sin(x)
+
     def activation_function(self, x):
         # Select the activation function based on the specified output_activation
         if self.output_activation == 'relu':
@@ -61,5 +64,7 @@ class NeuralBrain:
             return self.sigmoid(x)
         elif self.output_activation == 'tanh':
             return self.tanh(x)
+        elif self.output_activation == 'sin':
+            return self.sin(x)
         else:
             raise ValueError(f"Invalid output activation function: {self.output_activation}")
